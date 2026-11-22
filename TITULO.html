@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Título</title>
+</head>
+
+<body bgcolor="#001122">
+
+    <style>
+    @font-face {
+        font-family: "Pricedown Bl";
+        src: url("assets/fonts/Pricedown Bl.otf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    * {
+        font-family: "Pricedown Bl", sans-serif !important;
+    }
+</style>
+
+    <center>
+        <font color="cyan">
+            <h1><marquee>Problemas del agua</marquee></h1>
+        </font>
+    </center>
+
+    <audio id="musica" preload="auto">
+        <source src="assets/audio/sfx.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const musica = document.getElementById("musica");
+        let primeraVez = true;
+
+        musica.addEventListener("ended", async () => {
+            musica.currentTime = 0;
+            try {
+                await musica.play();
+            } catch (error) {
+                console.log("El navegador bloqueó la reproducción.");
+            }
+        });
+
+        window.addEventListener("load", async () => {
+            try {
+                await new Promise((resolve, reject) => {
+                    if (musica.readyState >= 1) {
+                        resolve();
+                    } else {
+                        musica.addEventListener("loadedmetadata", resolve, { once: true });
+                        musica.addEventListener("error", reject, { once: true });
+                    }
+                });
+
+                musica.currentTime = 60;
+                await musica.play();
+
+                primeraVez = false;
+            } catch (error) {
+                console.log("El navegador bloqueó el audio automático.");
+            }
+        });
+    </script>
+
+</body>
+</html>

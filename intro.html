@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cargando...</title>
+  <link rel="icon" href="assets/img/icon.png" type="image/x-icon">
+
+
   <style>
     * { box-sizing: border-box; }
     html, body {
@@ -34,6 +37,17 @@
       cursor: pointer;
     }
     #iniciar[hidden] { display: none; }
+
+    @font-face {
+        font-family: "Pricedown Bl";
+        src: url("assets/fonts/Pricedown Bl.otf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    * {
+        font-family: "Pricedown Bl", sans-serif !important;
+    }
   </style>
 </head>
 <body>
@@ -48,6 +62,9 @@
     const video = document.getElementById('videoIntro');
     const boton = document.getElementById('iniciar');
 
+    setTimeout(() => {
+    document.title = "Grand Theft Auto V - Problemas del agua";
+    }, 33000);
     
     video.addEventListener('ended', () => {
       window.location.href = 'principal.html';

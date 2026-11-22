@@ -1,0 +1,94 @@
+/* Variables de color estilo Apple Intelligence / iOS Glow */
+:root {
+  --ios-glow-gradient: linear-gradient(
+    90deg,
+    #bc82f3,
+    #f5b9ea,
+    #8d99ff,
+    #ff6778,
+    #ffba71,
+    #c686ff
+  );
+  --glass-bg: rgba(25, 25, 30, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.22);
+}
+
+/* Tarjetas / Contenedores estilo cristal iOS */
+.ios-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* Efecto Glow exterior animado (para botones, tarjetas destacadas o marcos) */
+.ios-glow {
+  position: relative;
+  border-radius: 24px;
+  z-index: 1;
+}
+
+.ios-glow::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: var(--ios-glow-gradient);
+  background-size: 300% 300%;
+  filter: blur(14px);
+  opacity: 0.85;
+  z-index: -1;
+  animation: iosGlowFlow 6s ease infinite;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Borde nítido luminoso encima del difuminado */
+.ios-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: var(--ios-glow-gradient);
+  background-size: 300% 300%;
+  animation: iosGlowFlow 6s ease infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Botón interactivo estilo iOS Glow */
+.ios-btn {
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background: rgba(30, 30, 36, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #ffffff;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ios-btn:hover {
+  transform: scale(1.03);
+  background: rgba(45, 45, 55, 0.75);
+}
+
+.ios-btn:active {
+  transform: scale(0.97);
+}
+
+@keyframes iosGlowFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

@@ -1,35 +1,127 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CENTRO</title>
 
-<HTML lang="es">
-
-<HEAD>
-
-<TITLE> CENTRO </TITLE>
-
-<style>
+  <style>
     @font-face {
-        font-family: "Pricedown Bl";
-        src: url("assets/fonts/Pricedown Bl.otf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
+      font-family: "Pricedown Bl";
+      src: url("assets/fonts/Pricedown Bl.otf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      --bg-image: url("assets/img/bg2.jpeg"); /* Cambia esto a tu imagen de fondo */
+      --glow-gradiente: linear-gradient(
+        90deg,
+        #bc82f3,
+        #f5b9ea,
+        #8d99ff,
+        #ff6778,
+        #ffba71,
+        #c686ff
+      );
     }
 
     * {
-        font-family: "Pricedown Bl", sans-serif !important;
+      box-sizing: border-box;
+      font-family: "Pricedown Bl", sans-serif !important;
     }
-</style>
 
-</HEAD>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background-color: #001122;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
 
-<BODY BGCOLOR=#"001122">
+    /* Capa sutil para que el texto y el glow destaquen sobre la imagen */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 10, 24, 0.45);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-<FONT COLOR=#"FFFFFF"><CENTER><H1>Inicio</H1></CENTER></FONT>
-<br>
-<br>
-<br>
+    /* Contenedor estilo cristal con glow */
+    .caja-glow {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      width: 100%;
+      padding: 40px 32px;
+      text-align: center;
+      border-radius: 28px;
+      background: rgba(12, 20, 38, 0.55);
+      backdrop-filter: blur(20px) saturate(175%);
+      -webkit-backdrop-filter: blur(20px) saturate(175%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+    }
 
-<h2><font color="cyan"> Bienvenido al inicio aqui es una demostracion de lo que puede pasar.</font></h2>
+    /* Halo de luz exterior animado */
+    .caja-glow::before {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: inherit;
+      background: var(--glow-gradiente);
+      background-size: 300% 300%;
+      filter: blur(16px);
+      opacity: 0.75;
+      z-index: -1;
+      animation: moverGlow 7s ease infinite;
+    }
 
-</BODY>
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-shadow:
+        0 0 12px rgba(141, 153, 255, 0.85),
+        0 0 28px rgba(188, 130, 243, 0.65);
+    }
 
-</HTML>
+    h2 {
+      margin: 0;
+      font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+      line-height: 1.4;
+      color: #7ef9ff;
+      text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.7),
+        0 0 24px rgba(141, 153, 255, 0.45);
+    }
+
+    @keyframes moverGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="caja-glow">
+    <h1>¡Bienvenido!</h1>
+    <h2>En esta pagina hablaremos sobre los problemas del agua</h2>
+    <h3> Por favor haga click en Introduccion para empezar.</h3>
+  </main>
+
+</body>
+</html>

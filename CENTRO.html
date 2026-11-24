@@ -14,7 +14,7 @@
     }
 
     :root {
-      --bg-image: url("assets/img/bg2.jpeg"); /* Cambia esto a tu imagen de fondo */
+      --bg-image: url("assets/img/bg2.jpeg"); 
       --glow-gradiente: linear-gradient(
         90deg,
         #FFFFFF,
@@ -48,7 +48,7 @@
       overflow-x: hidden;
     }
 
-    /* Capa sutil para que el texto y el glow destaquen sobre la imagen */
+    
     body::before {
       content: "";
       position: fixed;
@@ -58,7 +58,7 @@
       z-index: 0;
     }
 
-    /* Contenedor estilo cristal con glow */
+    
     .caja-glow {
       position: relative;
       z-index: 1;
@@ -74,7 +74,7 @@
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
     }
 
-    /* Halo de luz exterior animado */
+    
     .caja-glow::before {
       content: "";
       position: absolute;

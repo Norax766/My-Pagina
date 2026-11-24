@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+
+<HTML lang="es">
+
+<HEAD>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<TITLE> CENTRO </TITLE>
+
+<style>
+    @font-face {
+      font-family: "Pricedown Bl";
+      src: url("assets/fonts/Pricedown Bl.otf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      --bg-image: url("assets/img/bg2.jpeg"); /* Cambia esto a tu imagen de fondo */
+      --glow-gradiente: linear-gradient(
+        90deg,
+        #bc82f3,
+        #f5b9ea,
+        #8d99ff,
+        #ff6778,
+        #ffba71,
+        #c686ff
+      );
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Pricedown Bl", sans-serif !important;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background-color: #001122;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* Capa sutil para que el texto y el glow destaquen sobre la imagen */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 10, 24, 0.45);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Contenedor estilo cristal con glow */
+    .caja-glow {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      width: 100%;
+      padding: 40px 32px;
+      text-align: center;
+      border-radius: 28px;
+      background: rgba(12, 20, 38, 0.55);
+      backdrop-filter: blur(20px) saturate(175%);
+      -webkit-backdrop-filter: blur(20px) saturate(175%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    /* Halo de luz exterior animado */
+    .caja-glow::before {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: inherit;
+      background: var(--glow-gradiente);
+      background-size: 300% 300%;
+      filter: blur(16px);
+      opacity: 0.75;
+      z-index: -1;
+      animation: moverGlow 7s ease infinite;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      letter-spacing: 2px;
+      color: #51ff00;
+      text-shadow:
+        0 0 12px rgba(141, 153, 255, 0.85),
+        0 0 28px rgba(188, 130, 243, 0.65);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+      line-height: 1.4;
+      color: #fbff00;
+      text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.7),
+        0 0 24px rgba(141, 153, 255, 0.45);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+      line-height: 1.4;
+      color: #FFD700;
+      text-shadow:
+        0 0 10px rgba(238, 255, 0, 0.7),
+        0 0 24px rgba(141, 153, 255, 0.45);
+    }
+
+    @keyframes moverGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+
+</HEAD>
+
+<BODY BGCOLOR=#"001122">
+<main class="caja-glow">
+<FONT COLOR=#"#000000"><CENTER><H1>Problemas del Agua</H1></CENTER></FONT>
+<FONT COLOR=#"#000000"><CENTER><H2> En el Salto </H2></CENTER></FONT>
+<br>
+<br>
+<h3><font color="#000000"> El Salto, Jalisco, enfrenta una crisis hídrica compleja que combina la contaminación histórica del río Santiago y la presa Las Pintas con fallas en el suministro y la calidad del agua potable en varias colonias. </font></h3>
+<br>
+<br>
+<img src="assets/img/ElSalto_1.jpg" alt="Panorama" width="670" height="250">
+<br>
+<br>
+<img src="assets/img/panorama_2El Salto.webp" alt="Panorama" width="670" height="250">
+<br>
+<br>
+<img src="assets/img/panorama_3ElSalto.avif" alt="Panorama" width="670" height="250">
+<br>
+<br>
+<img src="assets/img/ElSalto_4.jpg" alt="Panorama" width="670" height="250">
+<br>
+<br>
+</main>
+ 
+</BODY>
+
+</HTML>

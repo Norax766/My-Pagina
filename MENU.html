@@ -3,7 +3,7 @@
 <HTML lang="es">
 
 <HEAD>
-
+<meta charset="UTF-8">
 <TITLE> MENU </TITLE>
 <link rel="stylesheet" href="assets/css/ios-glow.css">
 
@@ -37,7 +37,7 @@ border-radius: 50px;
   }
 
   :root {
-      --bg-image: url("assets/img/bg.jpeg"); /* Cambia esto a tu imagen de fondo */
+      --bg-image: url("assets/img/bg.jpeg"); 
       --glow-gradiente: linear-gradient(
         90deg,
         #bc82f3,
@@ -71,7 +71,7 @@ border-radius: 50px;
       overflow-x: hidden;
     }
 
-    /* Capa sutil para que el texto y el glow destaquen sobre la imagen */
+
     body::before {
       content: "";
       position: fixed;
@@ -81,7 +81,7 @@ border-radius: 50px;
       z-index: 0;
     }
 
-    /* Contenedor estilo cristal con glow */
+
     .caja-glow {
       position: relative;
       z-index: 1;
@@ -97,7 +97,7 @@ border-radius: 50px;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
     }
 
-    /* Halo de luz exterior animado */
+   
     .caja-glow::before {
       content: "";
       position: absolute;
@@ -148,6 +148,11 @@ border-radius: 50px;
   <br>
   <nav>
    <a class="boton" href="info1.html" target="contenido"> <center><h5>Introduccion</h5></center> </a>
+  </nav>
+  <br>
+  <br>
+  <nav>
+   <a class="boton" href="info2.html" target="contenido"> <center><h5>Problemas del Agua (De El Salto)</h5></center> </a>
   </nav>
 </main>
 

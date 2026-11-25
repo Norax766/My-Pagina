@@ -2,12 +2,12 @@
 :root {
   --ios-glow-gradient: linear-gradient(
     90deg,
-    #bc82f3,
-    #f5b9ea,
-    #8d99ff,
-    #ff6778,
-    #ffba71,
-    #c686ff
+    #414141,
+    #444444,
+    #4b4b4b,
+    #292929,
+    #2e2e2e,
+    #3d3d3d
   );
   --glass-bg: rgba(25, 25, 30, 0.45);
   --glass-border: rgba(255, 255, 255, 0.22);

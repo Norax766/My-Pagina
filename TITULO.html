@@ -1,43 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Título</title>
+
+    <style>
+        @font-face {
+            font-family: "Pricedown Bl";
+            src: url("assets/fonts/Pricedown Bl.otf") format("opentype");
+        }
+
+        * {
+            font-family: "Pricedown Bl", sans-serif !important;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        .logo {
+            display: block;
+            width: 75%;
+            max-width: 350px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            margin: -5px 0 0;
+            padding: 0;
+            text-align: center;
+        }
+    </style>
 </head>
-    
- <style>
-    @font-face {
-        font-family: "Pricedown Bl";
-        src: url("assets/fonts/Pricedown Bl.otf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-    }
 
-    * {
-        font-family: "Pricedown Bl", sans-serif !important;
-    }
+<body>
 
-body {
-    background-image: url("assets/img/title.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-h1 {
-    margin-top: 69px;
-}
-     
-</style>
-
-    <BODY BGCOLOR=#"001122">
-        
     <center>
-        <font color="#FFFFFF">
-            <h1><marquee>Problemas del agua</marquee></h1>
-        </font>
+        <img src="assets/img/title.png" class="logo" alt="Los Santos">
+    </center>
+
+    <center>
+        <h1><marquee>Problemas del agua</marquee></h1>
     </center>
 
     <audio id="musica" preload="auto">
